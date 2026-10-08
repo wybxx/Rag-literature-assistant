@@ -1,0 +1,22 @@
+# greenlet 固定为 3.1.1：Python 3.9 有现成的 Windows 安装包，
+# 更高版本需要本机 C++ 编译器才能装，会报 "Microsoft Visual C++ 14.0 required"
+greenlet==3.1.1
+# gradio 4.x 与 huggingface_hub 1.x 不兼容（HfFolder 被移除），锁定 0.x
+huggingface_hub==0.34.4
+
+langchain>=0.2.0
+langchain-community>=0.2.0
+langchain-openai>=0.1.0
+openai>=1.30.0
+requests>=2.28.0   # rerank.py 调用硅基流动 /rerank 接口用
+chromadb>=0.5.0
+
+# --- PDF 解析 ---
+pypdf>=4.0.0        # 纯文本兜底：未安装 PyMuPDF 时降级用它
+pymupdf>=1.24.0     # 文献结构化抽取：正文 + 表格(Markdown) + 插图(PNG)
+                    # 安装慢时换国内源：pip install -i https://mirrors.aliyun.com/pypi/simple/ pymupdf
+
+gradio>=4.0.0
+python-dotenv>=1.0.0
+rank_bm25>=0.2.2   # 混合检索的关键词通道（BM25 算法）
+jieba>=0.42.1      # 中文分词，BM25 按词统计需要它（没装会退化成单字切分）

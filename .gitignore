@@ -1,0 +1,22 @@
+# ---- 密钥与配置（务必不要提交）----
+.env
+
+# ---- 运行时生成的产物（clone 后本地重建即可）----
+vector_db/
+assets/
+summaries/
+cache/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# ---- 编辑器 / 系统 ----
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
